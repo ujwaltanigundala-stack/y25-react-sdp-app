@@ -1,5 +1,4 @@
 import { useRegistration } from "../context/RegistrationContext";
-// Show the progress indicator at the top
 function StepIndicator({ current }) {
   let stepNames = ["Personal", "Contact", "Preferences", "Review"];
   let progress = ((current - 1) / 3) * 100;
@@ -38,7 +37,6 @@ function StepIndicator({ current }) {
   );
 }
 
-// Main layout - wraps content with progress indicator
 export function WizardLayout({ children }) {
   let reg = useRegistration();
 

@@ -1,23 +1,18 @@
-// Validation function for Step 1 - Personal Information
 function validateStep1(data) {
   let errors = {};
   
-  // Check first name is not empty
   if (data.firstName === "") {
     errors.firstName = "First name required";
   }
   
-  // Check last name is not empty
   if (data.lastName === "") {
     errors.lastName = "Last name required";
   }
   
-  // Check email has @ symbol
   if (!data.email.includes("@")) {
     errors.email = "Valid email required";
   }
   
-  // Check date of birth is not empty
   if (data.dateOfBirth === "") {
     errors.dateOfBirth = "Date required";
   }
@@ -25,7 +20,6 @@ function validateStep1(data) {
   return errors;
 }
 
-// Validation function for Step 2 - Contact Information
 function validateStep2(data) {
   let errors = {};
   
@@ -52,11 +46,9 @@ function validateStep2(data) {
   return errors;
 }
 
-// Validation function for Step 3 - Preferences
 function validateStep3(data) {
   let errors = {};
   
-  // Check if at least one preference is selected
   if (data.preferences.length === 0) {
     errors.preferences = "Select at least one";
   }
@@ -64,7 +56,6 @@ function validateStep3(data) {
   return errors;
 }
 
-// Submit the form - waits 1.5 seconds then returns success
 function submitForm(data) {
   return new Promise(function(resolve) {
     setTimeout(function() {

@@ -3,7 +3,6 @@ import { createContext, useContext, useState } from "react";
 const RegistrationContext = createContext();
 
 export const RegistrationProvider = ({ children }) => {
-  // Step 1: State - What data does the form have?
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -23,26 +22,22 @@ export const RegistrationProvider = ({ children }) => {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
 
-  // Step 2: Update a field value
   function updateField(field, value) {
     let newData = { ...data };
     newData[field] = value;
     setData(newData);
   }
 
-  // Step 3: Move to next step
   function nextStep() {
     setStep(step + 1);
   }
 
-  // Step 4: Move to previous step
   function previousStep() {
     if (step > 1) {
       setStep(step - 1);
     }
   }
 
-  // Step 5: Reset everything
   function resetWorkflow() {
     setData({
       firstName: "",
@@ -62,7 +57,6 @@ export const RegistrationProvider = ({ children }) => {
     setErrors({});
   }
 
-  // Step 6: Provide all functions and data to child components
   let value = {
     data: data,
     updateField: updateField,
@@ -83,7 +77,6 @@ export const RegistrationProvider = ({ children }) => {
   );
 };
 
-// Use this hook in components
 export function useRegistration() {
   let context = useContext(RegistrationContext);
   return context;
