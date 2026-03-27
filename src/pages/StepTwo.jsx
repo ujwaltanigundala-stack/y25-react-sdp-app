@@ -9,6 +9,7 @@ function StepTwo() {
   function handleSubmit(event) {
     event.preventDefault();
     let errors = validateStep2(reg.data);
+    
     if (Object.keys(errors).length === 0) {
       reg.setErrors({});
       reg.nextStep();
@@ -34,7 +35,6 @@ function StepTwo() {
             value={reg.data.phone}
             onChange={(e) => reg.updateField("phone", e.target.value)}
             placeholder="+91 9876543210"
-            required
           />
           {reg.errors.phone && <span className="error">{reg.errors.phone}</span>}
         </div>
@@ -46,7 +46,6 @@ function StepTwo() {
             value={reg.data.address}
             onChange={(e) => reg.updateField("address", e.target.value)}
             placeholder="123 Main Street"
-            required
           />
           {reg.errors.address && <span className="error">{reg.errors.address}</span>}
         </div>
@@ -59,7 +58,6 @@ function StepTwo() {
               value={reg.data.city}
               onChange={(e) => reg.updateField("city", e.target.value)}
               placeholder="New York"
-              required
             />
             {reg.errors.city && <span className="error">{reg.errors.city}</span>}
           </div>
@@ -71,7 +69,6 @@ function StepTwo() {
               value={reg.data.state}
               onChange={(e) => reg.updateField("state", e.target.value)}
               placeholder="NY"
-              required
             />
             {reg.errors.state && <span className="error">{reg.errors.state}</span>}
           </div>
@@ -83,17 +80,16 @@ function StepTwo() {
               value={reg.data.zipCode}
               onChange={(e) => reg.updateField("zipCode", e.target.value)}
               placeholder="10001"
-              required
             />
             {reg.errors.zipCode && <span className="error">{reg.errors.zipCode}</span>}
           </div>
         </div>
 
         <div className="form-actions">
-          <button type="button" className="btn btn-secondary" onClick={handleBack}>
+          <button type="button" className="flex-1 py-3 px-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg uppercase tracking-wider hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed" onClick={handleBack}>
             Back
           </button>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="flex-1 py-3 px-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg uppercase tracking-wider hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed">
             Next
           </button>
         </div>

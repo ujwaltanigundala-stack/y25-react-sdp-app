@@ -10,6 +10,7 @@ function StepThree() {
   function handleSubmit(event) {
     event.preventDefault();
     let errors = validateStep3(reg.data);
+    
     if (Object.keys(errors).length === 0) {
       reg.setErrors({});
       reg.nextStep();
@@ -26,11 +27,16 @@ function StepThree() {
 
   function togglePreference(pref) {
     let newPrefs = reg.data.preferences;
+    
+   
     if (newPrefs.includes(pref)) {
+    
       newPrefs = newPrefs.filter(p => p !== pref);
     } else {
+ 
       newPrefs = newPrefs.concat(pref);
     }
+    
     reg.updateField("preferences", newPrefs);
   }
 
@@ -63,12 +69,10 @@ function StepThree() {
         <div className="form-group">
           <label>Interests (select at least one) *</label>
           <div className="checkbox-group">
-            {interests.map((pref, idx) => (
+            {interests.map((pref) => (
               <label key={pref}>
                 <input
                   type="checkbox"
-                  name="preferences"
-                  required={idx === 0 ? true : undefined}
                   checked={reg.data.preferences.includes(pref)}
                   onChange={() => togglePreference(pref)}
                 />
@@ -80,10 +84,10 @@ function StepThree() {
         </div>
 
         <div className="form-actions">
-          <button type="button" className="btn btn-secondary" onClick={handleBack}>
+          <button type="button" className="flex-1 py-3 px-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg uppercase tracking-wider hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed" onClick={handleBack}>
             Back
           </button>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="flex-1 py-3 px-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg uppercase tracking-wider hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed">
             Review
           </button>
         </div>

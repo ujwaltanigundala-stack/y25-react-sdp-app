@@ -1,4 +1,8 @@
-/* Global Styles */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +27,6 @@ body {
   min-height: 100vh;
 }
 
-/* Container */
 .container {
   width: 100%;
   max-width: 700px;
@@ -33,7 +36,7 @@ body {
   padding: 2rem;
 }
 
-/* Step Container */
+
 .step-container {
   animation: fadeIn 0.3s ease-in-out;
 }
@@ -61,7 +64,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* Form Styles */
+
 form {
   display: flex;
   flex-direction: column;
@@ -130,7 +133,7 @@ form {
   margin-top: 0.25rem;
 }
 
-/* Checkboxes */
+
 .form-group label input[type="checkbox"] {
   margin-right: 0.5rem;
   cursor: pointer;
@@ -157,7 +160,7 @@ form {
   height: 18px;
 }
 
-/* Buttons */
+
 .form-actions {
   display: flex;
   gap: 1rem;
@@ -165,45 +168,7 @@ form {
   justify-content: flex-end;
 }
 
-.btn {
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
 
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  flex: 1;
-}
-
-.btn-primary:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-}
-
-.btn-secondary {
-  background: #f0f0f0;
-  color: #333;
-  flex: 1;
-}
-
-.btn-secondary:hover:not(:disabled) {
-  background: #e0e0e0;
-}
-
-/* Review Section */
 .review-container {
   background: #f9f9f9;
   padding: 1.5rem;
@@ -249,7 +214,7 @@ form {
   max-width: 50%;
 }
 
-/* Step Indicator Styles */
+
 .step-indicator {
   margin-bottom: 2rem;
   padding: 1.5rem;
@@ -348,7 +313,7 @@ form {
   transition: width 0.3s ease;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .container {
     padding: 1.5rem;
@@ -365,10 +330,6 @@ form {
 
   .form-actions {
     flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
   }
 
   .review-item {
@@ -395,8 +356,4 @@ form {
     font-size: 1.4rem;
   }
 
-  .btn {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.85rem;
-  }
 }

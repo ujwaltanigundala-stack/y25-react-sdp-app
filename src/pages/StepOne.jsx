@@ -5,15 +5,21 @@ import { validateStep1 } from "../utils/validation";
 function StepOne() {
   let navigate = useNavigate();
   let reg = useRegistration();
+  
 
   function handleSubmit(event) {
     event.preventDefault();
+    
+    
     let errors = validateStep1(reg.data);
+    
+   
     if (Object.keys(errors).length === 0) {
       reg.setErrors({});
       reg.nextStep();
       navigate("/step-2");
     } else {
+    
       reg.setErrors(errors);
     }
   }
@@ -30,7 +36,6 @@ function StepOne() {
               value={reg.data.firstName}
               onChange={(e) => reg.updateField("firstName", e.target.value)}
               placeholder="John"
-              required
             />
             {reg.errors.firstName && <span className="error">{reg.errors.firstName}</span>}
           </div>
@@ -42,7 +47,6 @@ function StepOne() {
               value={reg.data.lastName}
               onChange={(e) => reg.updateField("lastName", e.target.value)}
               placeholder="Doe"
-              required
             />
             {reg.errors.lastName && <span className="error">{reg.errors.lastName}</span>}
           </div>
@@ -55,7 +59,6 @@ function StepOne() {
             value={reg.data.email}
             onChange={(e) => reg.updateField("email", e.target.value)}
             placeholder="john@example.com"
-            required
           />
           {reg.errors.email && <span className="error">{reg.errors.email}</span>}
         </div>
@@ -66,13 +69,12 @@ function StepOne() {
             type="date"
             value={reg.data.dateOfBirth}
             onChange={(e) => reg.updateField("dateOfBirth", e.target.value)}
-            required
           />
           {reg.errors.dateOfBirth && <span className="error">{reg.errors.dateOfBirth}</span>}
         </div>
 
         <div className="form-actions">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="flex-1 py-3 px-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg uppercase tracking-wider hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed">
             Next
           </button>
         </div>
