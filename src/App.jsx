@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { RegistrationProvider } from "./context/RegistrationContext";
 import { WizardLayout } from "./components/WizardLayout";
 import StepOne from "./pages/StepOne";
@@ -8,7 +8,7 @@ import Review from "./pages/Review";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <RegistrationProvider>
         <WizardLayout>
           <Routes>
@@ -20,6 +20,6 @@ export default function App() {
           </Routes>
         </WizardLayout>
       </RegistrationProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
