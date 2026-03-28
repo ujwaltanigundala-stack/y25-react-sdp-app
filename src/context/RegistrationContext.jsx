@@ -77,6 +77,7 @@ export const RegistrationProvider = ({ children }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useRegistration() {
   let context = useContext(RegistrationContext);
   return context;

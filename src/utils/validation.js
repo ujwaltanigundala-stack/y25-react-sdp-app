@@ -56,7 +56,7 @@ function validateStep3(data) {
   return errors;
 }
 
-function submitForm(data) {
+function submitForm() {
   return new Promise(function(resolve) {
     setTimeout(function() {
       resolve({
